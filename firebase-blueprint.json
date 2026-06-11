@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "User preferences and progress tracking",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "languageLevel": { "type": "string", "enum": ["simple", "standard"] },
+        "streak": { "type": "number" },
+        "lastUpdated": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "languageLevel"]
+    },
+    "CoachingHistory": {
+      "title": "Coaching History",
+      "description": "Historical chat logs and coaching progress",
+      "type": "object",
+      "properties": {
+        "historyId": { "type": "string" },
+        "userId": { "type": "string" },
+        "message": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "type": { "type": "string", "enum": ["wellness", "career"] }
+      },
+      "required": ["historyId", "userId", "message", "timestamp", "type"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile data"
+    },
+    "/users/{userId}/coaching_history/{historyId}": {
+      "schema": "CoachingHistory",
+      "description": "Individual coaching interaction records"
+    }
+  }
+}

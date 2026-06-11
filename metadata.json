@@ -1,0 +1,6 @@
+{
+  "name": "Phoenix Re-Skilling Coach",
+  "description": "An interactive AI-powered career re-skilling and emotional wellness companion designed to help seasoned packaging, design, and manufacturing professionals renew their mindsets, map out modern AI workflows, master workplace English, and find motivation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
